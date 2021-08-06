@@ -1,0 +1,52 @@
+@import '../base';
+@import '../components/mixins';
+
+.share {
+    &__data {
+        text-align: center;
+    }
+
+    &__description,
+    &__title {
+        margin-bottom: $margin-1;
+    }
+
+    &__img {
+        justify-self: center;
+    }
+}
+
+@media (min-width:576px) {
+    .share {
+        &__container {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
+
+        &__img {
+            min-width: 400px;
+            padding-left: 1rem;
+            order: -1;
+        }
+
+        &__data {
+            padding-right: 1rem;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .share {
+        &__container {
+            padding: 0 1rem;
+        }
+
+        &__data {
+            padding-right: 0;
+        }
+
+        &__img {
+            padding-left: 0;
+        }
+    }
+}

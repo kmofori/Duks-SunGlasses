@@ -1,0 +1,82 @@
+@import '../base';
+@import '../components/mixins';
+
+.send {
+    background-color: $green-color;
+
+    &__description {
+        text-align: center;
+        margin-bottom: $margin-2;
+    }
+
+    &__title,
+    &__description {
+        color: $white-color;
+    }
+
+    &__direction {
+        display: flex;
+        background-color: $white-color;
+        padding: .6rem;
+        justify-content: space-around;
+    }
+
+    &__input {
+        width: 70%;
+        outline: none;
+        border: none;
+        font-family: $paragraph;
+        color: $dark-color-tint2;
+        letter-spacing: $letter-spacing;
+        font-size: $normal-font;
+        border-radius: 8px;
+        box-shadow: 0px 0px 14px -7px rgba(0,0,0,0.7);
+        padding-left: .5rem;
+
+        &::placeholder {
+            color: $dark-color-tint2;
+            font-family: $paragraph;
+        }
+    }
+
+    &__img {
+        justify-self: center;
+    }
+}
+
+@media (min-width:576px) {
+    .send {
+        &__container {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
+
+        &__content {
+            padding-left: 1rem;
+        }
+
+        &__description {
+            text-align: initial;
+        }
+
+        &__img {
+            padding-right: 1rem;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .send {
+        background: none;
+
+        &__container {
+            background-color: $green-color;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        &__direction {
+            background-color: transparent;
+        }
+    }
+}

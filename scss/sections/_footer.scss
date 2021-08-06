@@ -1,0 +1,82 @@
+@import '../base';
+@import '../components/mixins';
+
+.footer {
+  max-width: 1024px;
+  margin-left: 1rem;
+
+  &__container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  &__logo {
+    color: $dark-color-tint2;
+  }
+
+  &__title {
+    margin-bottom: $margin-1;
+  }
+
+  &__description {
+    color: $grey-color;
+    padding-right: 1rem;
+  }
+
+  &__content {
+    margin-bottom: $margin-2;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    transition: 0.4s;
+
+    &:hover {
+      color: $green-color;
+    }
+  }
+
+  &__social {
+    font-size: 2rem;
+    transition: 0.4s;
+
+    &:nth-of-type(1) {
+      color: #4267b2;
+
+      &:hover {
+        color: darken($color: #4267b2, $amount: 10);
+      }
+    }
+
+    &:nth-of-type(2) {
+      color: #1da1f2;
+
+      &:hover {
+        color: darken($color: #1da1f2, $amount: 10);
+      }
+    }
+
+    &:nth-of-type(3) {
+      color: #c13584;
+
+      &:hover {
+        color: darken($color: #c13584, $amount: 10);
+      }
+    }
+  }
+
+  &__copy {
+    font-size: $small-font;
+    text-align: center;
+    color: $grey-color;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+}

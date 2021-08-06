@@ -1,0 +1,33 @@
+@import '../base';
+@import '../components/mixins';
+
+.brands {
+    &__container {
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    }
+
+    &__data {
+        text-align: center;
+        background-color: $grey-color;
+        padding: 1rem 0 2rem;
+        box-shadow: 0 2px 6px rgba($color: rgb(101, 17, 22), $alpha: .15);
+    }
+
+    &__img,
+    &__data-title {
+        margin-bottom: $margin-1;
+    }
+
+    &__title {
+        margin-bottom: $margin-2;
+        text-align: center;
+    }
+}
+
+@media (min-width: 576px) {
+    .brands {
+        &__container {
+            padding: 0 1rem;
+        }
+    }
+}
