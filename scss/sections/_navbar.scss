@@ -2,123 +2,121 @@
 @import '../components/mixins';
 
 .nav {
-    height: $header-height;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: {
-        left: $margin-1;
-        right: $margin-1;
+  height: $header-height;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: {
+    left: $margin-1;
+    right: $margin-1;
+  }
+
+  &__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.96);
+    padding: 3rem 1.5rem 0.5rem 1.5rem;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+    transition: 0.7s;
+    box-shadow: 0 0 8px rgba(167, 169, 170, 0.5);
+  }
+
+  &__logo {
+    color: $dark-color-tint2;
+
+    &:hover {
+      color: $green-color;
     }
+  }
 
-    &__menu {
-        position: fixed;
-        top: -100%;
-        left: 0;
-        right: 0;
-        width: 80%;
-        margin: 0 auto;
-        background-color: rgba(255, 255, 255, 0.96);
-        padding: 3rem 1.5rem .5rem 1.5rem ;
-        text-align: center;
-        border-radius: 0 0 8px 8px;
-        transition: .7s;
-        box-shadow: 0 0 8px rgba(167, 169, 170, .5);
+  &__toggle {
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  &__item {
+    padding: 0.3rem 0.2rem;
+    margin-bottom: $margin-2;
+  }
+
+  &__link {
+    padding: 0.3rem 0.2rem;
+    transition: 0.3s;
+
+    &:hover {
+      color: $green-color;
     }
+  }
 
-    &__logo {
-        color: $dark-color-tint2;
-
-        &:hover {
-            color: $green-color;
-        }
-    }
-
-    &__toggle {
-        cursor: pointer;
-        font-size: 1.5rem;
-    }
-
-    &__item {
-        padding: .3rem .2rem;
-        margin-bottom: $margin-2;
-    }
-
-    &__link {
-        padding: .3rem .2rem;
-        transition: .3s;
-
-        &:hover {
-            color: $green-color;
-        }
-    }
-
-    &__link,
-    &__toggle {
-        color: $dark-color-tint2;
-        font-weight: bold;
-    }
+  &__link,
+  &__toggle {
+    color: $dark-color-tint2;
+    font-weight: bold;
+  }
 }
 
 .show-menu {
-    top: $header-height;
+  top: $header-height;
 }
 
 // ACTIVE LINK
 .active {
-    position: relative;
+  position: relative;
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: -.75rem;
-        left: 50%;
-        width: 8px;
-        height: 8px;
-        background-color: $green-color;
-        border-radius: 50%;
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    top: -0.75rem;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: $green-color;
+    border-radius: 50%;
+  }
 }
 
 .scroll-header {
-    box-shadow: 0 2px 8px rgba($color: #000000, $alpha: .5);
-    background-color: rgba(255, 255, 255, 0.9);
-    z-index: 10;
+  box-shadow: 0 2px 8px rgba($color: #000000, $alpha: 0.5);
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 10;
 }
 
 @media (min-width: 768px) {
-    .nav {
-
-        &__logo {
-            font-size: 1.5rem;
-
-        }
-
-        &__menu {
-            all: unset;
-            display: grid;
-            justify-content: flex-end;
-            align-items: flex-end;
-        }
-
-        &__items {
-            display: flex;
-            justify-content: flex-end;
-            flex-direction: row;
-            height: inherit;
-        }
-
-        &__item {
-            margin-right: $margin-2;
-            margin-bottom: 0;
-        }
-
-        &__link {
-            padding: 0;            
-        }
-
-        &__toggle {
-            display: none;
-        }
+  .nav {
+    &__logo {
+      font-size: 1.5rem;
     }
+
+    &__menu {
+      all: unset;
+      display: grid;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    &__items {
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: row;
+      height: inherit;
+    }
+
+    &__item {
+      margin-right: $margin-2;
+      margin-bottom: 0;
+    }
+
+    &__link {
+      padding: 0;
+    }
+
+    &__toggle {
+      display: none;
+    }
+  }
 }
